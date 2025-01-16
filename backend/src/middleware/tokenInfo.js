@@ -1,7 +1,6 @@
 import jwt from "jsonwebtoken";
-function verifyToken(req, res, next) {
-  const token = req.header("Authorization");
-  if (!token) return res.status(401).json({ error: "Access denied" });
+function infoToken(req, res) {
+  const token = req.body;
   try {
     const decoded = jwt.verify(token, "your-secret-key");
     req.userId = decoded.userId;
@@ -13,4 +12,4 @@ function verifyToken(req, res, next) {
   }
 }
 
-export default verifyToken;
+export default infoToken;

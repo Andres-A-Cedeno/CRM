@@ -6,6 +6,8 @@ import {
   AddUser,
   UpdateUser,
   RemoveUser,
+  getAllNicknames,
+  getAllEmails,
 } from "../../module/Users/users.js";
 
 export const get_users = async (req, res) => {
@@ -103,6 +105,30 @@ export const remove_user = async (req, res) => {
     const result = await RemoveUser(cedula);
     res.status(200).json(result.recordset);
     console.log("Usuarios eliminado por ci obtenido con exito: ");
+  } catch (err) {
+    res.status(500).send("error en controlador" + err.message);
+    console.log(err);
+  }
+};
+
+export const nickname_list = async (req, res) => {
+  try {
+    const { nickname } = req.params;
+    const result = await getAllNicknames(nickname);
+    res.status(200).json(result.recordset);
+    console.log("Usuarios obtenidos con exito");
+  } catch (err) {
+    res.status(500).send("error en controlador" + err.message);
+    console.log(err);
+  }
+};
+
+export const email_list = async (req, res) => {
+  try {
+    const { email } = req.params;
+    const result = await getAllEmails(email);
+    res.status(200).json(result.recordset);
+    console.log("Usuarios obtenidos con exito");
   } catch (err) {
     res.status(500).send("error en controlador" + err.message);
     console.log(err);

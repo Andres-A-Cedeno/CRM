@@ -21,8 +21,13 @@ import auditRoutes from "./src/routes/Storage/auditRoutes.js";
 import dbConnection from "./src/config/sqlserver.js";
 import sql from "mssql";
 
+import protectedRoute from "./src/routes/protectedRoute.js";
+import auth from "./src/routes/auth.js";
+
 import swaggerJSDoc from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
+
+import cors from "cors";
 
 const swaggerDefinition = {
   openapi: "3.0.0",
@@ -49,6 +54,7 @@ const swaggerSpec = swaggerJSDoc(options);
 const app = express();
 const PORT = process.env.PORT;
 
+app.use(cors());
 app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use(bodyParser.json());
@@ -73,6 +79,10 @@ app.use(
   serviceDealRoutes,
   auditRoutes
 );
+
+//app.use(express.json());
+app.use("/auth", auth);
+app.use("/protected", protectedRoute);
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en el puerto ${PORT}`);

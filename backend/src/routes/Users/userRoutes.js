@@ -4,8 +4,10 @@ import {
   new_user,
   update_user,
   remove_user,
+  nickname_list,
+  email_list,
 } from "../../controller/Users/usersController.js";
-import express from "express";
+import express, { Router } from "express";
 
 const router = express.Router();
 
@@ -220,5 +222,9 @@ router.put("/usuarios/:cedula", update_user);
  */
 
 router.delete("/usuarios/:cedula", remove_user);
+
+router.get("/usuarios-list/:nickname", nickname_list);
+
+router.get("/email-list/:email", email_list);
 
 export default router;

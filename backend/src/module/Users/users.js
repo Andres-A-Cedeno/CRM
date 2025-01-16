@@ -4,20 +4,19 @@ import { addAudit } from "../Storage/audit.js";
 
 const auth_user = 1;
 
-export const getUserLogin = async (nickname) => {
+export const getUserLogin = async (email) => {
   try {
     const data = await dbConnection;
     if (!data.connected) {
       console.log("No se puede conectar a la base de datos");
     }
-    const query = `SELECT CPU_NICKNAME, CPU_CONTRASENA 
+    const query = `SELECT CPU_CEDULA, CPU_CONTRASENA 
         FROM CP_USUARIOS
-        WHERE CPU_NICKNAME = @nickname`;
+        WHERE CPU_CORREO = @email`;
     const result = await data
       .request()
-      .input("nickname", sql.VarChar, nickname)
+      .input("email", sql.VarChar, email)
       .query(query);
-    addAudit("CP_USUARIOS", "GET /" + cedula, query, auth_user);
     return result;
   } catch (error) {
     throw error;
@@ -182,6 +181,45 @@ export const RemoveUser = async (cedula) => {
     addAudit("CP_USUARIOS", "DELETE /" + cedula, query, auth_user);
     return result;
   } catch (error) {
+    throw error;
+  }
+};
+
+export const getAllNicknames = async (nickname) => {
+  try {
+    const data = await dbConnection;
+    if (!data.connected) {
+      console.log("No se puede conectar a la base de datos");
+    }
+    const query = `SELECT CPU_NICKNAME FROM CP_USUARIOS WHERE CPU_NICKNAME = @nickname`;
+    const result = await data
+      .request()
+      .input("nickname", sql.VarChar, nickname)
+      .query(query);
+    //result.recordset.length == 0 ? (result = null) : result;
+    console.log();
+    return result;
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};
+
+export const getAllEmails = async (email) => {
+  try {
+    const data = await dbConnection;
+    if (!data.connected) {
+      console.log("No se puede conectar a la base de datos");
+    }
+    const query = `SELECT CPU_CORREO FROM CP_USUARIOS WHERE CPU_CORREO = @CORREO`;
+    const result = await data
+      .request()
+      .input("CORREO", sql.VarChar, email)
+      .query(query);
+    console.log();
+    return result;
+  } catch (error) {
+    console.log(error);
     throw error;
   }
 };
