@@ -1,6 +1,6 @@
 <section class="w-[90vw] h-full flex flex-col gap-7 p-4">
   <div
-    class="w-full h-[45vh] rounded-lg shadow-lg align-middle justify-center px-6 py-4 bg-white border border-red-500"
+    class="w-full h-[45vh] rounded-lg shadow-lg align-middle justify-center px-6 py-4 bg-white border"
   >
     <div class="flex flex-row">
       <h1 class="w-full text-3xl text-black font-bold">Bienvenido 👋</h1>
@@ -10,7 +10,7 @@
       >
         <mat-icon
           fontSet="material-icons-outlined"
-          class="mr-2"
+          class=""
           [style]="{ color: 'white' }"
         >
           person_add</mat-icon
@@ -20,76 +20,80 @@
     </div>
     <p class="mt-3 text-gray-400 text-sm">Pestañas asignadas</p>
 
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <div
+      class="relative overflow-y-auto overflow-x-auto shadow-md sm:rounded-lg"
+    >
       <table
-        class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+        class="w-full table-fixed text-sm text-left text-gray-500 dark:text-gray-400"
       >
         <thead
-          class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+          class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 border"
         >
           <tr>
-            <th scope="col" class="px-6 py-3">Product name</th>
-            <th scope="col" class="px-6 py-3">Color</th>
-            <th scope="col" class="px-6 py-3">
-              <span class="sr-only">Edit</span>
-            </th>
+            <th scope="col" class="px-4 py-3 border-r-2">Roles</th>
+            <th scope="col" class="px-4 py-3 border-r-2">Pagina designada</th>
+            <th scope="col" class="px-4 py-3">Acciones</th>
           </tr>
         </thead>
         <tbody>
           <tr
             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
           >
-            <th
-              scope="row"
-              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            <td
+              class="text-gray-900 whitespace-nowrap dark:text-white border-r-2"
             >
-              Apple MacBook Pro 17"
-            </th>
-            <td class="px-6 py-4">Silver</td>
-            <td class="px-6 py-4 text-right">
-              <a
-                href="#"
-                class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                >Edit</a
+              <div
+                class="flex flex-row items-center h-full px-4 py-2 font-medium"
               >
+                <mat-icon
+                  fontSet="material-icons-outlined"
+                  class="mr-2"
+                  [style]="{ color: 'gray' }"
+                >
+                  person</mat-icon
+                >
+                Dev
+              </div>
             </td>
-          </tr>
-          <tr
-            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
-          >
-            <th
-              scope="row"
-              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-            >
-              Microsoft Surface Pro
-            </th>
-            <td class="px-6 py-4">White</td>
-
-            <td class="px-6 py-4 text-right">
-              <a
-                href="#"
-                class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                >Edit</a
-              >
+            <td class="border-r-2">
+              <div class="px-4 py-2 gap-3 flex flex-row">
+                <div>
+                  <h2 class="bg-green-100 h-8 py-2 px-3 w-fit rounded-3xl">
+                    CAS
+                  </h2>
+                </div>
+                <div>
+                  <h2 class="bg-green-100 h-8 py-2 px-3 w-fit rounded-3xl">
+                    Dev Dashboard
+                  </h2>
+                </div>
+              </div>
             </td>
-          </tr>
-          <tr
-            class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600"
-          >
-            <th
-              scope="row"
-              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-            >
-              Magic Mouse 2
-            </th>
-            <td class="px-6 py-4">Black</td>
-
-            <td class="px-6 py-4 text-right">
-              <a
-                href="#"
-                class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                >Edit</a
+            <td class="px-4 py-2 flex flex-row gap-2">
+              <button
+                type="button"
+                class="bg-yellow-100 flex flex-row items-center h-8 py-2 px-3 rounded-3xl text-yellow-600"
               >
+                <mat-icon
+                  fontSet="material-icons-outlined"
+                  class="mr-1"
+                  [style]="{ color: 'yellow-600' }"
+                >
+                  edit</mat-icon
+                >Editar
+              </button>
+              <button
+                type="button"
+                class="bg-red-100 flex flex-row items-center h-8 py-2 px-3 rounded-3xl text-red-600"
+              >
+                <mat-icon
+                  fontSet="material-icons-outlined"
+                  class="mr-1"
+                  [style]="{ color: 'red-600' }"
+                >
+                  delete_forever</mat-icon
+                >Eliminiar
+              </button>
             </td>
           </tr>
         </tbody>
@@ -99,11 +103,129 @@
   <div
     class="w-full h-[45vh] bg-white rounded-lg shadow-lg flex flex-row p-5 gap-5 border border-blue-500"
   >
-    <div class="flex-1 rounded-md border border-yellow-500">
-      <h3>busqueda empleado</h3>
+    <div class="flex-1 p-3 rounded-md border-slate-300 border-2">
+      <div class="mb-4">
+        <form class="max-w-md mx-auto">
+          <label
+            for="default-search"
+            class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+            >Search</label
+          >
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
+            >
+              <mat-icon
+                fontSet="material-icons-outlined"
+                class="mr-1"
+                [style]="{ color: 'gray' }"
+              >
+                search</mat-icon
+              >
+            </div>
+            <input
+              type="search"
+              id="default-search"
+              class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Ingrese el nombre del empleado"
+              required
+            />
+          </div>
+        </form>
+      </div>
+      <div
+        class="h-4/5 overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
+      >
+        <cdk-accordion class="example-accordion">
+          @for (item of items; track item; let index = $index) {
+          <cdk-accordion-item
+            #accordionItem="cdkAccordionItem"
+            class="example-accordion-item"
+          >
+            <button
+              class="example-accordion-item-header"
+              (click)="accordionItem.toggle()"
+              tabindex="0"
+              [attr.id]="'accordion-header-' + index"
+              [attr.aria-expanded]="accordionItem.expanded"
+              [attr.aria-controls]="'accordion-body-' + index"
+            >
+              {{ item }}
+              <span class="example-accordion-item-description">
+                Click para {{ accordionItem.expanded ? "cerrar" : "abrir" }}
+              </span>
+            </button>
+            @if(accordionItem.expanded) {
+            <div
+              class="example-accordion-item-body"
+              role="region"
+              [style.display]="accordionItem.expanded ? '' : 'none'"
+              [attr.id]="'accordion-body-' + index"
+              [attr.aria-labelledby]="'accordion-header-' + index"
+            >
+              Usuario Ci Info general
+            </div>
+            }
+          </cdk-accordion-item>
+          }
+        </cdk-accordion>
+      </div>
     </div>
-    <div class="flex-1 rounded-md border border-green-600">
-      <h3>busqueda empleado 2</h3>
+    <div class="flex-1 rounded-md border-slate-300 border-2">
+      <div
+        class="p-3 overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
+      >
+        <cdk-accordion class="flex flex-col gap-3">
+          @for (item of items; track item; let index = $index) {
+          <cdk-accordion-item
+            #accordionItem="cdkAccordionItem"
+            class="info-accordion-item bg-green-50"
+          >
+            <button
+              class="flex flex-col gap-2 w-full p-2 bg-green-100 hover:bg-green-200 text-green-700 rounded-md"
+              (click)="accordionItem.toggle()"
+              tabindex="0"
+              [attr.id]="'accordion-header-' + index"
+              [attr.aria-expanded]="accordionItem.expanded"
+              [attr.aria-controls]="'accordion-body-' + index"
+            >
+              <div class="flex flex-row text-base w-full">
+                <div class="flex flex-row gap-2 w-full">
+                  {{ item }}
+                  <h1
+                    class="text-yellow-600 bg-yellow-200 rounded-lg text-xs h-fit p-1 font-semibold"
+                  >
+                    Desarrollo
+                  </h1>
+                </div>
+                <div class="flex place-self-end">
+                  <mat-icon fontSet="material-icons-outlined" class="">
+                    person</mat-icon
+                  >
+                </div>
+              </div>
+              <div class="flex">
+                <h1>Dev</h1>
+                <span class="border">
+                  Click to {{ accordionItem.expanded ? "close" : "open" }}
+                </span>
+              </div>
+            </button>
+            @if(accordionItem.expanded) {
+            <div
+              class="info-accordion-item-body"
+              role="region"
+              [style.display]="accordionItem.expanded ? '' : 'none'"
+              [attr.id]="'accordion-body-' + index"
+              [attr.aria-labelledby]="'accordion-header-' + index"
+            >
+              info general \n ci \n etc
+            </div>
+            }
+          </cdk-accordion-item>
+          }
+        </cdk-accordion>
+      </div>
     </div>
     <div class="flex-1 rounded-md border border-pink-500">
       <h3>busqueda empleado 3</h3>
