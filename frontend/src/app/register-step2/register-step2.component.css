@@ -1,0 +1,7 @@
+select {
+  color: gray;
+
+  option {
+    color: black;
+  }
+}

@@ -1,3 +1,30 @@
 import { Routes } from '@angular/router';
+import { EmailSentComponent } from './email-sent/email-sent.component';
+import { PasswordEmailComponent } from './password-email/password-email.component';
+import { LoginComponent } from './login/login.component';
+import { NewPaswordComponent } from './new-pasword/new-pasword.component';
+import { PasswordChangedComponent } from './password-changed/password-changed.component';
+import { RegisterComponent } from './register/register.component';
+import { RegisterStep2Component } from './register-step2/register-step2.component';
+import { HomeComponent } from './home/home.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import { AccountsComponent } from './accounts/accounts.component';
+import { BoardComponent } from './board/board.component';
+import { ContractsComponent } from './contracts/contracts.component';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+  { path: 'email-sent', component: EmailSentComponent },
+  { path: 'password-email', component: PasswordEmailComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'new-password', component: NewPaswordComponent },
+  { path: 'password-changed', component: PasswordChangedComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'register-step2', component: RegisterStep2Component },
+  { path: 'home', component: HomeComponent },
+  { path: 'calendar', component: CalendarComponent },
+  { path: 'contacts', component: ContactsComponent },
+  { path: 'accounts', component: AccountsComponent },
+  { path: 'contracts', component: ContractsComponent },
+  { path: 'board', component: BoardComponent },
+];

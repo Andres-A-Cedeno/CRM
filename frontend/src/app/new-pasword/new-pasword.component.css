@@ -1,0 +1,52 @@
+.jobluu-strength-meter {
+  height: 4px;
+  background-color: #eee;
+  margin-bottom: 5px;
+}
+
+.jobluu-strength-meter-fill {
+  height: 100%;
+  width: 0;
+  transition: width 0.3s, background-color 0.3s;
+}
+
+.jobluu-strength-meter-fill[data-strength="1"] {
+  background-color: #ff4444;
+  width: 20%;
+}
+.jobluu-strength-meter-fill[data-strength="2"] {
+  background-color: #ffa700;
+  width: 40%;
+}
+.jobluu-strength-meter-fill[data-strength="3"] {
+  background-color: #ffdb4a;
+  width: 60%;
+}
+.jobluu-strength-meter-fill[data-strength="4"] {
+  background-color: #9ccc65;
+  width: 80%;
+}
+.jobluu-strength-meter-fill[data-strength="5"] {
+  background-color: #00c853;
+  width: 100%;
+}
+
+.jobluu-strength-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.jobluu-criteria-item {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.jobluu-criteria-item i {
+  margin-right: 5px;
+  color: #ccc;
+}
+
+.jobluu-criteria-item.met i {
+  color: #00c853;
+}

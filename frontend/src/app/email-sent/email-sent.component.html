@@ -1,0 +1,32 @@
+<div class="w-full h-full flex items-center justify-center">
+  <div class="flex flex-col w-1/3 gap-14">
+    <div class="w-full items-center flex flex-col">
+      <img src="assets/email-sent.svg" alt="correo enviado" />
+      <h1 class="font-bold leading-tight tracking-tight text-5xl">
+        ¡Revisa tu correo!
+      </h1>
+      <h3 class="font-normal my-3 text-[#9095A0] w-5/6">
+        ¡Gracias! Se envio un correo que te pedira hacer clic en un enlace para
+        verificar que eres el propietario de esta cuenta
+      </h3>
+    </div>
+    <div>
+      <button
+        onclick="window.location.href='/new-password'"
+        type="submit"
+        class="w-full mb-3 text-xl font-light text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 rounded-lg px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+      >
+        Abrir bandeja de entrada
+      </button>
+      <button
+        onclick="window.location.href='/password-email'"
+        class="w-full text-xl hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-primary-300 font-light rounded-lg px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+      >
+        <mat-icon class="text-2xl" fontSet="material-icons-outlined"
+          >keyboard_arrow_left</mat-icon
+        >
+        Reenviar correo
+      </button>
+    </div>
+  </div>
+</div>

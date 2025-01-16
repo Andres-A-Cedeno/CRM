@@ -1,16 +1,21 @@
 <main class="main">
-  <div class="flex font-semibold">
-    Hola Mundo
-    <span class="font-extrabold text-2xl">Esto es un texto grande</span>
-  </div>
+  <section
+    [ngClass]="{
+      ' justify-center items-center flex': conditionRouter === false,
+      'flex flex-row': conditionRouter === true
+    }"
+    class="bg-white dark:bg-gray-900 h-screen w-screen"
+  >
+    <app-login-header *ngIf="showHeaderlogin"></app-login-header>
+    <app-crm-navbar *ngIf="showHeader"></app-crm-navbar>
+    <div
+      class="border w-full align-middle justify-center"
+      [ngClass]="{
+        'h-[93vh] w-full': conditionRouter === false,
+        ' flex flex-row w-full h-full bg-slate-100': conditionRouter === true
+      }"
+    >
+      <router-outlet />
+    </div>
+  </section>
 </main>
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-<router-outlet />
