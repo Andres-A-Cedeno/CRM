@@ -6,6 +6,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
     FormsModule,
     CommonModule,
     AppRoutingModule,
+    MatDialogModule,
   ],
   providers: [provideHttpClient(), CookieService],
   bootstrap: [AppComponent],

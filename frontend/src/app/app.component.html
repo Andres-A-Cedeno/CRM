@@ -1,15 +1,15 @@
-<main class="main">
+<main class="main w-full">
   <section
     [ngClass]="{
-      ' justify-center items-center flex': conditionRouter === false,
-      'flex flex-row': conditionRouter === true
+      ' justify-center items-center flex w-full': conditionRouter === false,
+      'flex flex-row w-full': conditionRouter === true
     }"
-    class="bg-white dark:bg-gray-900 h-screen w-screen"
+    class="bg-white dark:bg-gray-900 h-screen w-full"
   >
     <app-login-header *ngIf="showHeaderlogin"></app-login-header>
     <app-crm-navbar *ngIf="showHeader"></app-crm-navbar>
     <div
-      class="border w-full align-middle justify-center"
+      class="w-full align-middle justify-center"
       [ngClass]="{
         'h-[93vh] w-full': conditionRouter === false,
         ' flex flex-row w-full h-full bg-slate-100': conditionRouter === true

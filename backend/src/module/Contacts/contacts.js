@@ -6,11 +6,13 @@ const auth_user = 1;
 
 export const getAllContacts = async () => {
   try {
-    const query = "SELECT * FROM CP_CONTACTOS";
+    //Open a connection to the database
     const data = await dbConnection;
     if (!data.connected) {
       console.log("No se puede conectar a la base de datos");
     }
+
+    const query = "SELECT * FROM CP_CONTACTOS";
     const result = await data.request().query(query);
     addAudit("CP_CONTACTOS", "GET", query, auth_user);
     return result;
